@@ -1,21 +1,28 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
 
-""" this class is the main class that creates views and has methods that
-    queries the database """
 
-class Project_query_maker(object):
+class Project_Query_Maker():
 
-    """ the class initialises database,creates views
-    and has methods to call queries """
+    """
+    This class is the main class that creates views and has methods that
+
+    queries the database. This class initialises database,creates views
+
+    and has methods to call queries
+
+    """
 
     def __init__(self):
+
+        """Instantiate all the  class variables"""
+
         # conn_string is the parameter that holds all parameters for
         # the connection to the database
-        self.conn_string = """ host = 0.0.0.0 dbname ='news'
-            user ='vagrant' password ='password' """
 
+        self.conn_string = """ host = 'localhost' dbname ='news'
+            user ='vagrant' password ='password' """
         self.query_popular_article = """ select articles.title,
         count(articles.title) from articles,log,authors where
         articles.author=authors.id and substring
@@ -102,17 +109,15 @@ class Project_query_maker(object):
         result = cursor.execute(self.query_popular_article)
         result = cursor.fetchall()
         count = 1
-	print "Most Popular Article"
-	print ".....................\n"
-	
+        print "Most Popular Article"
+        print ".....................\n"
         for items in result:
-            print str(count) +"."+ str(items[0]) +\
-                   "----------------> " + "Views" + " " + str(items[1])
-       	    count += 1
+            print str(count) + "." + str(items[0]) +\
+              " ----------------> " + "Views" + " " + str(items[1])
+            count += 1
             if count > 3:
-            	print "\n"
-            	return result
-	
+                print "\n"
+                return result
 
         # method to query most popular author
         # returns result in a list
@@ -128,7 +133,8 @@ class Project_query_maker(object):
         result = cursor.fetchall()
         count = 0
         for items in result:
-            print str(count + 1) + " " + items[0]+"--------------> "+"Views"+"  "+str(items[1])+"\n"
+            print str(count + 1) + " " + items[0] + "--------------> " + \
+                  "Views" + "  " + str(items[1]) + "\n"
             count += 1
         return result
 
@@ -136,29 +142,30 @@ class Project_query_maker(object):
         # the error percentage is passed as decimal to the method
 
     def errors(self, error_percentage):
-	print "Errors"
-	print ".............................\n"
+        print "Errors"
+        print ".............................\n"
         error_percentage = str(error_percentage)
         cursor = self.conn.cursor()
-        query = """select datet,failures,total_request from requests where 
+        query = """select datet,failures,total_request from requests where
         failures::numeric/total_request>%s;"""
         result = cursor.execute(query, [error_percentage])
         result = cursor.fetchall()
-	errors=float(result[0][1])
-	requests=result[0][2]
+        errors = float(result[0][1])
+        requests = result[0][2]
         print "Date" + " " + str(result[0][0]) + \
-              "------------>" + "Errors" + " "+str(round(errors/requests*100,2))+"%"+"\n"
+              "------------>" + "Errors" + " " + \
+              str(round(errors / requests * 100, 2)) + "%" + "\n"
         return result
 
-#creating a instance of the class:Project_query_maker
-queries = Project_query_maker()
+# creating a instance of the class:Project_query_maker
+queries = Project_Query_Maker()
 
-#calling method popular article on the instance
+# calling method popular article on the instance
 queries.popular_article()
 
-#calling method popular_author on the instance
+# calling method popular_author on the instance
 queries.popular_author()
 
-#calling method errors n the instance
-#and passing 0.01 i.e 1% as a parameter
+# calling method errors n the instance
+# and passing 0.01 i.e 1% as a parameter
 queries.errors(0.01)

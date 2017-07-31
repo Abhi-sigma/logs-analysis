@@ -57,10 +57,17 @@ Inside, you will find another directory called vagrant. Change directory to the 
 
 9. Load the data by typing `psql -d news -f newsdata.sql`.This will create news database and three tables articles,authors and log.
 
-10.Quit the psql prompt by typing `\q` or pressing <kbd>CTRL</kbd> + <kbd>D</kbd>
+10. Quit the psql prompt by typing `\q` or pressing <kbd>CTRL</kbd> + <kbd>D</kbd>
 
-11.cd into vagrant directory and type `git clone https://github.com/Abhi-sigma/logs-analysis'.
-This will clone the logs-analysis git diretory into the vagrant directory.cd into this directory and type `python queries.py`.
+11. cd into vagrant directory and type `git clone https://github.com/Abhi-sigma/logs-analysis'.
+This will clone the logs-analysis git diretory into the vagrant directory.cd into this directory and type `python queries.py`.If everything in followed
+exactly from above steps,you will see output in terminal as in output.txt file in logs-analysis directory.
+
+
+## About SQL VIEWS
+
+SQL Views have been used but you dont have to worry about setting them manually.The queries.py script takes care of that.Namely,two views
+requests and popular_articles are created, just so you know.You can check them out by connect to news database at psql prompt and using select statements.
 
 
 
