@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 
-
 class Project_Query_Maker():
 
     """
