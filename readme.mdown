@@ -6,9 +6,9 @@ requires knowledge of bash terminal,python and sql.
 
 The project requires knowledge of connecting to databases and executing queries to find the answers of the questions asked in project desription.
 Altogether three questions were asked viz.
-*.**_`What are the most popular three articles of all time?`_**
-*.**_`Who are the most popular article authors of all time?`_**
-*.**_`On which days did more than 1% of requests lead to errors?`_**
++ **_`What are the most popular three articles of all time?`_**
++ **_`Who are the most popular article authors of all time?`_**
++ **_`On which days did more than 1% of requests lead to errors?`_**
 
 
 ## Running the Project:
@@ -26,7 +26,7 @@ Installation:
 use the Git Bash terminal that comes with the Git software.
 If you don't already have Git installed, download Git from [here](git-scm.com). 
 
-2. VirtualBox is the software that actually runs the virtual machine. You can download it from virtualbox.org,(here)[https://www.virtualbox.org/wiki/Downloads]. 
+2. VirtualBox is the software that actually runs the virtual machine. You can download it from virtualbox.org, (here)[https://www.virtualbox.org/wiki/Downloads]. 
 Install the platform package for your operating system. You do not need the extension pack or the SDK. You do not need 
 to launch VirtualBox after installing it; Vagrant will do that.
 
@@ -40,10 +40,10 @@ and the VM's filesystem. Download it from (vagrantup.com). Install the version f
 Windows users: The Installer may ask you to grant network permissions to Vagrant or make a firewall exception. Be sure to allow this.
 
 
-4. You can download and unzip this file:[here](https://d17h27t6h515a5.cloudfront.net/topher/2017/June/5948287e_fsnd-virtual-machine/fsnd-virtual-machine.zip)
+4. You can download and unzip this file: [here] (https://d17h27t6h515a5.cloudfront.net/topher/2017/June/5948287e_fsnd-virtual-machine/fsnd-virtual-machine.zip)
 This will give you a directory called FSND-Virtual-Machine. 
 It may be located inside your Downloads folder.Alternately, you can use Github to fork and 
-clone the repository (https://github.com/udacity/fullstack-nanodegree-vm).Either way, 
+clone the repository (https://github.com/udacity/fullstack-nanodegree-vm). Either way, 
 you will end up with a new directory containing the VM files. Change to this directory in your terminal with cd.
 Inside, you will find another directory called vagrant. Change directory to the vagrant directory:
 
