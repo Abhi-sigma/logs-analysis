@@ -1,0 +1,27 @@
+connection established
+creating views..
+finished creating views..
+
+Most Popular Article
+.....................
+
+1.Candidate is jerk, alleges rival----------------> Views 342102
+2.Bears love berries, alleges bear----------------> Views 256365
+3.Bad things gone, say good people----------------> Views 171762
+
+
+Most Popular Author
+.......................
+
+1 Ursula La Multa--------------> Views  507594
+
+2 Rudolf von Treppenwitz--------------> Views  423457
+
+3 Anonymous Contributor--------------> Views  170098
+
+4 Markoff Chaney--------------> Views  84557
+
+Errors
+.............................
+
+Date 2016-07-17------------>Errors 2.26%
