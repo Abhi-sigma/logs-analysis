@@ -35,7 +35,7 @@ to launch VirtualBox after installing it; Vagrant will do that.
 	Due to a reported bug, installing VirtualBox from the site may uninstall other software you need.</strong>
 
 3. Vagrant is the software that configures the VM and lets you share files between your host computer 
-and the VM's filesystem. Download it from <vagrantup.com>. Install the version for your operating system.
+and the VM's filesystem. Download it from (vagrantup.com). Install the version for your operating system.
 
 Windows users: The Installer may ask you to grant network permissions to Vagrant or make a firewall exception. Be sure to allow this.
 
@@ -67,7 +67,7 @@ exactly from above steps,you will see output in terminal as in output.txt file i
 ## About SQL VIEWS
 
 SQL Views have been used but you dont have to worry about setting them manually.The queries.py script takes care of that.Namely,two views
-requests and popular_articles are created, just so you know.You can check them out by connecting to news database at psql prompt and using select statements.
+requests and popular_articles are created, just so you know.You can check them out by connecting to news database at psql prompt and using select statements once you run the script.
 
 
 
