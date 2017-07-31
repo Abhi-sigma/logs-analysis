@@ -67,7 +67,7 @@ exactly from above steps,you will see output in terminal as in output.txt file i
 ## About SQL VIEWS
 
 SQL Views have been used but you dont have to worry about setting them manually.The queries.py script takes care of that.Namely,two views
-requests and popular_articles are created, just so you know.You can check them out by connect to news database at psql prompt and using select statements.
+requests and popular_articles are created, just so you know.You can check them out by connecting to news database at psql prompt and using select statements.
 
 
 
