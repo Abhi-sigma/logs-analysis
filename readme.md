@@ -73,7 +73,7 @@ Two views namely requests and popular_article are created, when you run psql -d 
 
 Sql query which creates these view:
  
- ###popular_article View
+ ### popular_article View
  -------------------------------------------------------------------------------------
  CREATE OR REPLACE VIEW popular_article AS
  SELECT articles.title AS TITLE,authors.name AS NAME,
@@ -83,7 +83,7 @@ Sql query which creates these view:
 
 
  ------------------------------------------------------------------------------------------------
-  ###requests View
+  ### requests View
 
  CREATE OR REPLACE VIEW REQUESTS AS
  SELECT all_request.datet, all_request.total_request,
