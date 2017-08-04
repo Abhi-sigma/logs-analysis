@@ -27,7 +27,9 @@ class Project_Query_Maker():
 
         self.query_popular_author = """ SELECT NAME,SUM(VIEWS) AS TOTAL_VIEWS
         FROM POPULAR_ARTICLE GROUP BY NAME ORDER BY TOTAL_VIEWS DESC;"""
-
+        
+        # query for popular_article
+        
         self.query_popular_article = """ SELECT TITLE,VIEWS FROM POPULAR_ARTICLE
         LIMIT 3;"""
 
