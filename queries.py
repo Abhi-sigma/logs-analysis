@@ -111,7 +111,7 @@ class Project_Query_Maker():
             which resulted in mote than 20% errors, then pass 0.2(20/100) as a
             a argument to this function.
               """
-        print "Errors more than 1%"
+        print "Errors more than" + "  " + '{0:.2%}'.format(error_percentage)
         print ".............................\n"
         error_percentage = str(error_percentage)
         cursor = self.conn.cursor()
