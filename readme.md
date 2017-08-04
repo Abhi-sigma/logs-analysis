@@ -56,14 +56,14 @@ Inside, you will find another directory called vagrant. Change directory to the 
 
 8. Download the data [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip),unzip the file and put the file newsdata.sql into vagrant diretory.
 
-9. Load the data by typing `psql -d news -f newsdata.sql`.This will create 'news' database and three tables 'articles','authors' and 'log'.Please note the main script queries.py depends on these views so the python script will throw error if you dont run these first.
+9. Load the data by typing `psql -d news -f newsdata.sql`.This will create 'news' database and three tables 'articles','authors' and 'log'.
 
 10. Quit the psql prompt by typing `\q` or pressing <kbd>CTRL</kbd> + <kbd>D</kbd>
 
 11. cd into vagrant directory and type `git clone https://github.com/Abhi-sigma/logs-analysis`.
 This will clone the logs-analysis git diretory into the vagrant directory.cd into this directory and 
 type`psql -d news -f create_view.sql`.You will see "CREATE VIEW" on the terminal symbolising successful creation of a view.
-Now again type `python queries.py`.
+Now again type `python queries.py`.Please note the main script queries.py depends on these views so the python script will throw error if you dont run these first.
 If everything in followed exactly from above steps,you will see output in terminal as in output.txt file in logs-analysis directory.
 
 
