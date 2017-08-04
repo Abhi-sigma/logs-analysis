@@ -27,7 +27,9 @@ class Project_Query_Maker():
 
         self.query_popular_author = """ SELECT NAME,SUM(VIEWS) AS TOTAL_VIEWS
         FROM POPULAR_ARTICLE GROUP BY NAME ORDER BY TOTAL_VIEWS DESC;"""
-
+        
+        # query for popular_article
+        
         self.query_popular_article = """ SELECT TITLE,VIEWS FROM POPULAR_ARTICLE
         LIMIT 3;"""
 
@@ -39,11 +41,6 @@ class Project_Query_Maker():
         # connects to the database
 
         self.conn = self.connect_database(self.conn_string)
-
-        # method to call popular article
-        # returns a list of tuples
-        # in descending order of views
-        # also prints out top three articles
 
     def connect_database(self, conn_string):
 
