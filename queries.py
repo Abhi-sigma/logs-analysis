@@ -27,9 +27,9 @@ class Project_Query_Maker():
 
         self.query_popular_author = """ SELECT name,SUM(views) AS TOTAL_VIEWS
         FROM popular_article GROUP BY NAME ORDER BY TOTAL_VIEWS DESC;"""
-        
+
         # query for popular_article
-        
+
         self.query_popular_article = """ SELECT title,views FROM popular_article
         LIMIT 3;"""
 
@@ -56,7 +56,7 @@ class Project_Query_Maker():
 
     def popular_article(self):
 
-        """method that queries and returns top three articles
+        """Method that queries and returns top three articles
            prints out the top three articles on the console with
            number of views
 
@@ -109,7 +109,7 @@ class Project_Query_Maker():
             a argument to this function.
               """
         print "Days which resulted in" + \
-        "  " + '{0:.2%}'.format(error_percentage) + "  " + "errors"
+            "  " + '{0:.2%}'.format(error_percentage) + "  " + "errors"
         print ".............................\n"
         error_percentage = str(error_percentage)
         cursor = self.conn.cursor()
