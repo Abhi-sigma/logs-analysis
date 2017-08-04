@@ -42,11 +42,6 @@ class Project_Query_Maker():
 
         self.conn = self.connect_database(self.conn_string)
 
-        # method to call popular article
-        # returns a list of tuples
-        # in descending order of views
-        # also prints out top three articles
-
     def connect_database(self, conn_string):
 
         """Method that connects to the database
