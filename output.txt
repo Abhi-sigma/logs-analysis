@@ -13,7 +13,7 @@ Most Popular Author
 3. Anonymous Contributor---------->Views 170098
 4. Markoff Chaney---------->Views 84557
 --------------------------------------------------
-Errors more than 1%
+Days which resulted in  1.00%  errors
 .............................
 
  Date July, 17, 2016 Errors----->2.26%

@@ -25,12 +25,12 @@ class Project_Query_Maker():
 
         # query for popular author
 
-        self.query_popular_author = """ SELECT NAME,SUM(VIEWS) AS TOTAL_VIEWS
-        FROM POPULAR_ARTICLE GROUP BY NAME ORDER BY TOTAL_VIEWS DESC;"""
+        self.query_popular_author = """ SELECT name,SUM(views) AS TOTAL_VIEWS
+        FROM popular_article GROUP BY NAME ORDER BY TOTAL_VIEWS DESC;"""
         
         # query for popular_article
         
-        self.query_popular_article = """ SELECT TITLE,VIEWS FROM POPULAR_ARTICLE
+        self.query_popular_article = """ SELECT title,views FROM popular_article
         LIMIT 3;"""
 
         # sets class variable error_percentage which is overridden when
@@ -108,7 +108,8 @@ class Project_Query_Maker():
             which resulted in mote than 20% errors, then pass 0.2(20/100) as a
             a argument to this function.
               """
-        print "Errors more than" + "  " + '{0:.2%}'.format(error_percentage)
+        print "Days which resulted in" + \
+        "  " + '{0:.2%}'.format(error_percentage) + "  " + "errors"
         print ".............................\n"
         error_percentage = str(error_percentage)
         cursor = self.conn.cursor()
