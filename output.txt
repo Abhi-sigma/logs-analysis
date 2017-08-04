@@ -4,6 +4,7 @@ Most Popular Article
 1 . Candidate is jerk, alleges rival ------> Views 338647
 2 . Bears love berries, alleges bear ------> Views 253801
 3 . Bad things gone, say good people ------> Views 170098
+--------------------------------------------------
 Most Popular Author
 .......................
 
@@ -11,7 +12,9 @@ Most Popular Author
 2. Rudolf von Treppenwitz---------->Views 423457
 3. Anonymous Contributor---------->Views 170098
 4. Markoff Chaney---------->Views 84557
+--------------------------------------------------
 Errors more than 1%
 .............................
 
  Date July, 17, 2016 Errors----->2.26%
+--------------------------------------------------

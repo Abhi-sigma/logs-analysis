@@ -10,6 +10,8 @@ project required a single python script which could solve three questions that w
 + **_`On which days did more than 1% of requests lead to errors?`_**
 
 
+
+
 ## Running the Project:
 
 Requirements:
@@ -60,7 +62,7 @@ Inside, you will find another directory called vagrant. Change directory to the 
 
 11. cd into vagrant directory and type `git clone https://github.com/Abhi-sigma/logs-analysis`.
 This will clone the logs-analysis git diretory into the vagrant directory.cd into this directory and 
-type`psql -d news -f create_view.sql.You will see "CREATE VIEW" on the terminal symbolising successful creation of a view.
+type`psql -d news -f create_view.sql`.You will see "CREATE VIEW" on the terminal symbolising successful creation of a view.
 Now again type `python queries.py`.
 If everything in followed exactly from above steps,you will see output in terminal as in output.txt file in logs-analysis directory.
 
@@ -70,29 +72,30 @@ If everything in followed exactly from above steps,you will see output in termin
 Two views namely requests and popular_article are created, when you run psql -d news create_view.sql.You can check them out by connecting to news database at psql prompt and using select statements once you  had run the script.
 
 Sql query which creates these view:
+ 
  ###popular_article View
  -------------------------------------------------------------------------------------
- CREATE OR REPLACE VIEW POPULAR_ARTICLE AS
- SELECT ARTICLES.TITLE AS TITLE,AUTHORS.NAME AS NAME,
- COUNT(ARTICLES.TITLE) AS VIEWS FROM ARTICLES,LOG,AUTHORS
- WHERE ARTICLES.AUTHOR=AUTHORS.ID AND LOG.PATH = '/ARTICLE/' || ARTICLES.SLUG 
- GROUP BY ARTICLES.TITLE,AUTHORS.NAME ORDER BY VIEWS DESC;
+ CREATE OR REPLACE VIEW popular_article AS
+ SELECT articles.title AS TITLE,authors.name AS NAME,
+ COUNT(articles.title) AS VIEWS FROM articles,log,authors
+ WHERE articles.author=authors.id AND log.path = '/article/' || articles.slug 
+ GROUP BY articles.title,authors.name ORDER BY VIEWS DESC;
 
 
  ------------------------------------------------------------------------------------------------
   ###requests View
 
  CREATE OR REPLACE VIEW REQUESTS AS
- SELECT ALL_REQUEST.DATET,ALL_REQUEST.TOTAL_REQUEST,
- REQUEST_FAILS.FAILURES FROM 
- (SELECT (DATE(LOG.TIME))
- AS DATET,COUNT(DATE(LOG.TIME)) AS TOTAL_REQUEST
- FROM LOG GROUP BY DATE(LOG.TIME)) AS ALL_REQUEST
+ SELECT all_request.datet, all_request.total_request,
+ request_fails.failures FROM 
+ (SELECT (DATE(log.time))
+ AS DATET,COUNT(DATE(log.time)) AS TOTAL_REQUEST
+ FROM LOG GROUP BY DATE(log.time)) AS ALL_REQUEST
  JOIN
- (SELECT DATE(LOG.TIME) AS DATEF,COUNT(LOG.STATUS)
-  AS FAILURES FROM LOG WHERE LOG.STATUS !='200 OK'
-  GROUP BY DATE(LOG.TIME),LOG.STATUS) AS REQUEST_FAILS
-  ON ALL_REQUEST.DATET = REQUEST_FAILS.DATEF ORDER BY ALL_REQUEST.DATET;
+ (SELECT DATE(log.time) AS DATEF,COUNT(log.status)
+  AS FAILURES FROM log WHERE log.status !='200 OK'
+  GROUP BY DATE(log.time),log.status) AS REQUEST_FAILS
+  ON all_request.datet = request_fails.datef ORDER BY all_request.datet;
 
  ------------------------------------------------------------------------------------
 

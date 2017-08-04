@@ -76,6 +76,8 @@ class Project_Query_Maker():
             print ('{} . {} ------> Views {}'.format(
                 count, items[0], items[1]))
             count += 1
+        print "-" * 50
+        return result
 
     def popular_author(self):
 
@@ -97,11 +99,12 @@ class Project_Query_Maker():
             print ('{}. {}---------->Views {}'.format(count,
                    items[0], items[1]))
             count += 1
+        print "-" * 50
         return result
 
     def errors(self, error_percentage):
 
-        """ Method to query  for  days whih resulted in
+        """ Method to query  for  days which resulted in
             errors more than error_perentage
 
             Args:(float)error_perentage e.g if you are want to query for days
@@ -112,7 +115,7 @@ class Project_Query_Maker():
         print ".............................\n"
         error_percentage = str(error_percentage)
         cursor = self.conn.cursor()
-        query = """ SELECT DATET,FAILURES,TOTAL_REQUEST,FAILURES::NUMERIC/TOTAL_REQUEST
+        query = """ SELECT datet,failures,total_request,failures::numeric/total_request
                     AS ERRORS_PERCENT FROM REQUESTS WHERE
                     FAILURES::NUMERIC/TOTAL_REQUEST >%s;"""
         result = cursor.execute(query, [error_percentage])
@@ -121,6 +124,7 @@ class Project_Query_Maker():
             print (' Date {} Errors----->{}'.format(
                    items[0].strftime("%B, %d, %Y"),
                    '{0:.2%}'.format(items[3])))
+        print "-" * 50
         return result
 
 if __name__ == '__main__':
